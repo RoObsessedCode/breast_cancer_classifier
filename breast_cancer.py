@@ -2,7 +2,7 @@ import codecademylib3_seaborn
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
-
+import matplotlib.pyplot as plt
 breast_cancer_data = load_breast_cancer()
 
 
@@ -24,3 +24,9 @@ while (k < 101):
 
   accuracies.append(score
   k += 1
+
+plt.plot(k_list, accuracies, color = "purple")
+plt.xlabel("k")
+plt.ylabel("Validation Accuracy")
+plt.title("Breast Cancer Classifier Accuracy")
+plt.show()
